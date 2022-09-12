@@ -35,12 +35,55 @@ function App() {
 
       <Projects>
         <ProjectRow
+          timeRange={"Fall 20 - Present"}
+          name={"NYU Women in Computing President"}
+          href="https://nyuwinc.org/"
+        >
+          Organizing events and generating career opportunities for NYU
+          students, including recruiting events, interview preparation seminars,
+          resume reviews, and company spotlights. Designing the club website and
+          maintaining various social media platforms (e.g. Facebook, Instagram).
+        </ProjectRow>
+
+        <ProjectRow
           timeRange={"Summer 22"}
           name={"HalloApp Internship"}
           href="https://www.halloapp.com/"
         >
           Optimized performance of the main backend service by integrating
           worker-parallelism into the notification subsystem.
+        </ProjectRow>
+
+        <ProjectRow
+          timeRange={"Spring 22"}
+          name={"ChocoPy Compiler"}
+          href="https://github.com/nyu-compiler-construction/chocopy-choco-pie/"
+        >
+          Developed a compiler for Chocopy in three main stages: (1) lexing and
+          parsing in JFlex and CUP (2) semantic analysis (3) code generation in
+          RISC-V
+        </ProjectRow>
+
+        <ProjectRow
+          timeRange={"Fall 21"}
+          name={"Budget.ly"}
+          href="https://github.com/software-assignments-fall2021/project-setup-sneaky-seven"
+        >
+          Created a budgeting app that connects to a user’s bank account using
+          React, Express, MongoDB and the Plaid API. Developed customizable
+          categories, transaction organizing, and flexible spending/balance
+          statistics (using Google Charts).
+        </ProjectRow>
+
+        <ProjectRow
+          timeRange={"Spring 20 - Fall 21"}
+          name={"Data Structures Tutor"}
+          href="https://cs.nyu.edu/home/undergrad/tutoring.html"
+        >
+          Taught over 100 students on the use and design of data structures like
+          stacks, linked lists, trees, hashmaps, and heaps. Guided students on
+          how to analyze and modify the space and time complexity of different
+          algorithms.
         </ProjectRow>
 
         <ProjectRow
@@ -56,14 +99,14 @@ function App() {
         </ProjectRow>
 
         <ProjectRow
-          timeRange={"Fall 21"}
-          name={"Budget.ly"}
-          href="https://github.com/software-assignments-fall2021/project-setup-sneaky-seven"
+          timeRange={"Fall 19 - Spring 21"}
+          name={"NYU Stern Software Engineer"}
         >
-          Created a budgeting app that connects to a user’s bank account using
-          React, Express, MongoDB and the Plaid API. Developed customizable
-          categories, transaction organizing, and flexible spending/balance
-          statistics (using Google Charts).
+          Developed the front-end of a contact application by using JavaScript
+          to make XMLHttpRequests using Ajax and jQuery. Designed a processing
+          feature to create, edit, and remove contacts in Perl, Catalyst, and
+          SQL in a team of three people. Updated 10 applications to comply with
+          new accessibility standards while maintaining server functionality.
         </ProjectRow>
 
         <ProjectRow
@@ -85,36 +128,6 @@ function App() {
         </ProjectRow>
 
         <ProjectRow
-          timeRange={"19 - 21"}
-          name={"Data Structures Tutor"}
-          href="https://cs.nyu.edu/home/undergrad/tutoring.html"
-        >
-          Taught over 100 students on the use and design of data structures like
-          stacks, linked lists, trees, hashmaps, and heaps. Guided students on
-          how to analyze and modify the space and time complexity of different
-          algorithms.
-        </ProjectRow>
-
-        <ProjectRow timeRange={"19 - 21"} name={"NYU Stern Software Engineer"}>
-          Developed the front-end of a contact application by using JavaScript
-          to make XMLHttpRequests using Ajax and jQuery. Designed a processing
-          feature to create, edit, and remove contacts in Perl, Catalyst, and
-          SQL in a team of three people. Updated 10 applications to comply with
-          new accessibility standards while maintaining server functionality.
-        </ProjectRow>
-
-        <ProjectRow
-          timeRange={"Fall 19 - Present"}
-          name={"NYU WinC Event Coordinator"}
-          href="https://nyuwinc.org/"
-        >
-          Organizing events and generating career opportunities for NYU
-          students, including recruiting events, interview preparation seminars,
-          resume reviews, and company spotlights. Designing the club website and
-          maintaining various social media platforms (e.g. Facebook, Instagram).
-        </ProjectRow>
-
-        <ProjectRow
           timeRange={"Spring 19"}
           name={"Exploding Kittens"}
           href="https://github.com/alexliu4/catastrophe/"
@@ -125,7 +138,7 @@ function App() {
         </ProjectRow>
 
         <ProjectRow
-          timeRange={"Fall 19"}
+          timeRange={"Fall 18"}
           name={"You've Got Crabs"}
           href="https://github.com/tangym27/crabby"
         >
