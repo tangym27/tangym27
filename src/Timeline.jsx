@@ -24,9 +24,9 @@ const Wrapper = styled.div`
   align-items: flex-start;
 `;
 
-export const ProjectRow = ({ name, timeRange, href, children }) => {
-  return (
-    <Project>
+export const ProjectRow = ({ name, timeRange, href, children, select }) => {
+  return select ? (
+    <ProjectActive>
       <ProjectTime>{timeRange}</ProjectTime>
       {href ? (
         <ProjectNameLink href={href}>{name}</ProjectNameLink>
@@ -34,11 +34,13 @@ export const ProjectRow = ({ name, timeRange, href, children }) => {
         <ProjectName>{name}</ProjectName>
       )}
       <ProjectDescription>{children}</ProjectDescription>
-    </Project>
+    </ProjectActive>
+  ) : (
+    <></>
   );
 };
 
-const Project = styled.div`
+const ProjectActive = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -46,6 +48,9 @@ const Project = styled.div`
 
   @media (min-width: 750px) {
     flex-wrap: nowrap;
+  }
+  &:hover {
+    color: #e6007e;
   }
 `;
 
@@ -69,12 +74,16 @@ const ProjectName = styled.div`
     max-width: calc(18vw);
     margin-right: 12px;
   }
+  &:hover {
+    color: #e6007e;
+  }
 `;
 
 const ProjectNameLink = styled(Link)`
   font-weight: bold;
   margin-right: auto;
   white-space: normal;
+  color: inherit;
 
   @media (min-width: 750px) {
     min-width: calc(18vw);

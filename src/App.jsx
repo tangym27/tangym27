@@ -3,7 +3,7 @@ import { site } from "./constants";
 import Header, { HeadText } from "./Header";
 import Projects, { ProjectRow } from "./Timeline";
 import { Section } from "./util";
-import React from "react";
+import React, { useState } from "react";
 
 // Projects
 // https://i6.cims.nyu.edu/~mt4119/drawing/
@@ -14,6 +14,12 @@ import React from "react";
 // @media (prefers-reduced-motion: no-preference) {
 
 function App() {
+  const [selected, setSelected] = useState(1);
+
+  const config = (num) => {
+    setSelected(num);
+  };
+
   return (
     <Background>
       <Header>
@@ -27,17 +33,58 @@ function App() {
       <Content>
         <Section mobileRowCount={12} wideRowCount={22}>
           <LargeText>
-            Software engineer in NYC. Frontend in React and backend in both
-            Express and Erlang.
+            Software engineer. Android, React, Express, and Erlang.
           </LargeText>
         </Section>
       </Content>
-
+      <div style={{ display: "flex", fontSize: "2rem", gap: "1rem" }}>
+        <div
+          onClick={() => config(1)}
+          className={selected === 1 ? "active" : "inactive"}
+        >
+          {" "}
+          all{" "}
+        </div>
+        <span> | </span>
+        <div
+          onClick={() => config(2)}
+          className={selected === 2 ? "active" : "inactive"}
+        >
+          work{" "}
+        </div>
+        <span> | </span>
+        <div
+          onClick={() => config(3)}
+          className={selected === 3 ? "active" : "inactive"}
+        >
+          {" "}
+          projects{" "}
+        </div>
+      </div>
       <Projects>
         <ProjectRow
-          timeRange={"Fall 20 - Present"}
+          timeRange={"Feb 23 - Present"}
+          name={"HalloApp Android Software Engineer"}
+          href="https://www.halloapp.com/"
+          select={selected === 1 || selected === 2}
+        >
+          Maintain and release an application with 500k+ downloads on the Google
+          Play Store, averaging a crash-free user rate of 99.92%. Designed and
+          implemented a friendship model for a user base of 50,000 people
+          (transitioned from phonebook design). Built ML pipeline using Google’s
+          ML Image Classification model to cluster user photos based on
+          locations and time. Created a username/hashcash registration system
+          with additional phone number verification via OTP. Implemented
+          real-time updates of a user’s feed, including comments, reactions, or
+          deletions. Expanded user reporting system by removing posts from
+          public feed and preventing future occurrences
+        </ProjectRow>
+
+        <ProjectRow
+          timeRange={"Fall 20 - Jan 23"}
           name={"NYU Women in Computing President"}
           href="https://nyuwinc.org/"
+          select={selected === 1 || selected === 3}
         >
           Organizing events and generating career opportunities for NYU
           students, including recruiting events, interview preparation seminars,
@@ -49,6 +96,7 @@ function App() {
           timeRange={"Summer 22"}
           name={"HalloApp Internship"}
           href="https://www.halloapp.com/"
+          select={selected === 1 || selected === 2}
         >
           Optimized performance of the main backend service by integrating
           worker-parallelism into the notification subsystem.
@@ -56,8 +104,19 @@ function App() {
 
         <ProjectRow
           timeRange={"Spring 22"}
+          name={"Parks and Recreation Wordle"}
+          href="https://pawnle.vercel.app/"
+          select={selected === 1 || selected === 3}
+        >
+          Wordle with a subset of words from the television show, Parks and
+          Recreation. Built from React and the open source version of Wordle.
+        </ProjectRow>
+
+        <ProjectRow
+          timeRange={"Spring 22"}
           name={"ChocoPy Compiler"}
           href="https://github.com/nyu-compiler-construction/chocopy-choco-pie/"
+          select={selected === 1 || selected === 3}
         >
           Developed a compiler for Chocopy in three main stages: (1) lexing and
           parsing in JFlex and CUP (2) semantic analysis (3) code generation in
@@ -68,6 +127,7 @@ function App() {
           timeRange={"Fall 21"}
           name={"Budget.ly"}
           href="https://github.com/software-assignments-fall2021/project-setup-sneaky-seven"
+          select={selected === 1 || selected === 3}
         >
           Created a budgeting app that connects to a user’s bank account using
           React, Express, MongoDB and the Plaid API. Developed customizable
@@ -79,6 +139,7 @@ function App() {
           timeRange={"Spring 20 - Fall 21"}
           name={"Data Structures Tutor"}
           href="https://cs.nyu.edu/home/undergrad/tutoring.html"
+          select={selected === 1 || selected === 3}
         >
           Taught over 100 students on the use and design of data structures like
           stacks, linked lists, trees, hashmaps, and heaps. Guided students on
@@ -90,6 +151,7 @@ function App() {
           timeRange={"Summer 21"}
           name={"HalloApp Internship"}
           href="https://www.halloapp.com/"
+          select={selected === 1 || selected === 2}
         >
           Implemented functionality of 2 SMS gateways to improve delivery
           success rate of one-time passwords by 70% in Erlang. Optimized Redis
@@ -101,6 +163,7 @@ function App() {
         <ProjectRow
           timeRange={"Fall 19 - Spring 21"}
           name={"NYU Stern Software Engineer"}
+          select={selected === 1 || selected === 2}
         >
           Developed the front-end of a contact application by using JavaScript
           to make XMLHttpRequests using Ajax and jQuery. Designed a processing
@@ -112,6 +175,7 @@ function App() {
         <ProjectRow
           timeRange={"Spring 21"}
           name={"Kalotay Analytics Data Anaylyst"}
+          select={selected === 1 || selected === 2}
         >
           Processed over 1000000 trade dates to identify bond patterns using
           Python pandas. Analyzed the most effective way to generate bond curves
@@ -122,6 +186,7 @@ function App() {
           timeRange={"Summer 20"}
           name={"Alberta"}
           href="https://bugs-nyu.github.io/freshman-schedge-generator/"
+          select={selected === 1 || selected === 3}
         >
           Built a schedule generator that pulls from the NYU Course API and
           generates a schedule using React.
@@ -131,6 +196,7 @@ function App() {
           timeRange={"Spring 19"}
           name={"Exploding Kittens"}
           href="https://github.com/alexliu4/catastrophe/"
+          select={selected === 1 || selected === 3}
         >
           Developed an online version of “Exploding Kittens” written using Flask
           & JavaScript in a team of 4. Implemented authentication, sessions, and
@@ -141,6 +207,7 @@ function App() {
           timeRange={"Fall 18"}
           name={"You've Got Crabs"}
           href="https://github.com/tangym27/crabby"
+          select={selected === 1 || selected === 3}
         >
           Built a version of the card game “You’ve Got Crabs” in C with 3 other
           people.
